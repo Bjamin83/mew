@@ -1,0 +1,133 @@
+#MainDiv
+{
+position: relative;
+ 
+ 
+}
+ 
+#MainDiv > img
+{
+width: 100%;
+ 
+}
+ 
+#child .NextButton
+{
+position: absolute;
+top: 40%;
+right: 2%;
+}
+ 
+#child .PreButton
+{
+position: absolute;
+top: 40%;
+left: 2%;
+}
+ 
+
+ 
+#slider
+{
+width: 100%;
+overflow: hidden;
+position: relative;
+}
+ 
+#slider .slides
+{
+display: block;
+width: 8000px;
+margin: 0;
+padding: 0;
+}
+ 
+#slider .slide
+{
+float: left;
+list-style-type: none;
+width: 20%;
+ 
+}
+ 
+.slide > img {
+width: 100%;
+}
+ 
+.selectedImage
+{
+border:2px solid Red;
+}
+
+/**
+* ====================
+* MEDIA
+* ====================
+*/
+
+@media (max-width: 768px){
+	#Next{
+	display: none;
+	}
+
+	#Previous{
+	display: none;
+	}
+
+}
+@media (min-width: 768px){
+	#Next
+	{
+	opacity: 0.4;
+	filter: alpha(opacity=20);
+	}
+ 
+	#Next:hover
+	{
+	cursor: pointer;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	}
+ 
+	#Previous
+	{
+	opacity: 0.4;
+	filter: alpha(opacity=20);
+	}
+ 
+	#Previous:hover
+	{
+	cursor: pointer;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	}
+} 
+/**
+* ====================
+* SWIPE
+* ====================
+*/
+ 
+.swipe {
+overflow: hidden;
+position: relative;
+max-width: 600px;
+width: 100%;
+height: 350px;
+margin: 100px auto 0;
+}
+.swipe-wrap {
+overflow: hidden;
+position: relative;
+}
+.swipe-wrap > div {
+float: left;
+width: 100%;
+position: relative;
+}
+ 
+/** 
+.ui-loading .ui-loader { display: block; }
+.ui-loader { display: none; position: absolute; opacity: .85; z-index: 100; left: 50%; width: 200px; margin-left: -130px; margin-top: -35px; padding: 10px 30px; }
+
+**/
