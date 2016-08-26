@@ -156,7 +156,19 @@ wp_enqueue_script('fb');
         
         <input type="hidden" id="rating-unternehmen" value="<?php echo get_the_ID(); ?>" />
         <h2>Deine Bewertung:</h2>
-        <?php get_user_bewertung();  ?>
+        <?php
+        /* Abfrage ob angemeldeter Benutzer  */
+        $user 		= get_current_user_id();
+
+        if($user == 0){
+            echo "Zum Bewerten musst du angemeldet sein.";
+
+        } else {
+            get_user_bewertung();
+
+        }
+        ?>
+
         	
     </div>
 
