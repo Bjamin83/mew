@@ -96,12 +96,28 @@
 --->
                 
 	<div class="container no-padding">
-                
-            	<a id="userLogin" class="nav-login" href="#">
-            		<img alt="my easy wedding" src="<?php bloginfo( 'template_url' ); ?>/img/Icon_Anmeldung.png"> 
-            		<p>Anmelden</p>
+
+        <?php
+
+        //Unterscheidung ob Anmelden oder Abmelden:
+        $current_user = wp_get_current_user();
+
+        if ($current_user->exists()){
+            $ausgabe= '<a id="userLogout" class="nav-login" href="'. wp_logout_url() .'">
+            		<img alt="my easy wedding" src="' . get_bloginfo(  "template_url" ) .' /img/Icon_Anmeldung.png">
+            		<p>Abmelden</p>
         			
-      			</a>
+      			</a>';
+
+        } else {
+
+            $ausgabe= '<a id="userLogin" class="nav-login" href="#"><img alt="my easy wedding" src="' . get_bloginfo(  'template_url' ) . '/img/Icon_Anmeldung.png"><p>Anmelden</p></a>';
+
+        }
+
+        echo $ausgabe;
+
+        ?>
 
         <nav class="navbar navbar-default navbar-static-top">
           <div class="container-fluid">

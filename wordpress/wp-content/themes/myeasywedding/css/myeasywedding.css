@@ -23,7 +23,7 @@
 *  	==========================
 */
 
-#userLogin{
+#userLogin, #userLogout{
     position: absolute;
     z-index: 1100;
     right: 10px;
