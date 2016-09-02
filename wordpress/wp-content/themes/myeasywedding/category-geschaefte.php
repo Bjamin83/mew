@@ -1,18 +1,8 @@
 <?php get_header(); ?>
 
 <div class="my-row banner-flieder">
-		<div class="container margin-big">
-		  <div class="col-sm-5 col-md-5">
-		      <h1 class="hl-white bv-hd-left text-center">Prinzessin</h1>
-		  </div>
-		  <div class="col-sm-2 col-md-2">
-			<div class="bv-kreis flieder-text margin-auto text-center">
-			<h3>sucht</h3>
-			</div>
-		  </div>
-		  <div class="col-sm-5 col-md-5">
-		      <h1 class="hl-white bv-hd-right text-center">Traumprinz</h1>
-		  </div>
+		<div class="container">
+
 		
 		</div>
 		<img class="trenner-solo" src="<?php bloginfo( 'template_url' ); ?>/img/trenner-herz.png " alt="Pfeil"></img>

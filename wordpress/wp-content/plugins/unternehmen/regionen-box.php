@@ -111,7 +111,7 @@ function add_unternehmen_folder($post_ID){
 			
 				
 				//Fügt eine Kundennummer hinzu.
-				$knr = "MEW" . strtoupper($title_short) . date('dmy') . "_" . $post_ID;
+				$knr = "MEW" . date('dmy') . "_" . $post_ID;
 				
 				add_post_meta($post_ID, '_Unternehmens_kundennummer', $knr, true);
 				

@@ -7,21 +7,30 @@
 ?>
 
 <div class="my-row banner-flieder">
-	<div class="container text-center margin-bottom">
-		<div class="back">
-			<a href="<?php  echo get_category_link( $cat_overview );   ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
-		</div>
-		<div class="mew-categorie">
-            <h1>
-			<?php
-			     echo get_cat_name(get_query_var( 'cat' ));
-			?>
-            </h1>
-            <h2>Übersicht</h2>
-            
-		</div>
+	<div class="container">
+
+			 <a href="<?php  echo get_category_link( $cat_overview );   ?>"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a>
+		      <?php echo get_cat_name(get_query_var( 'cat' )); ?>
+
+
+
 	</div>
 </div>
+
+<div class="my-row">
+    <div class="container">
+
+        <div class="col-xs-12 col-sm-3">1dede</div>
+        <div class="col-xs-12 col-sm-3">2dedede</div>
+        <div class="col-xs-12 col-sm-3">3deded</div>
+        <div class="col-xs-12 col-sm-3">4dedede</div>
+
+    </div>
+
+</div>
+
+
+
 <?php
 				
 // Holt sich alle Beiträge vom Typ Unternehmen aus der Kategorie der aktuellen Seite.
@@ -51,6 +60,10 @@ $premium = get_post_meta(get_the_ID());
 //echo print_r($post);	
 
 ?>
+
+
+
+
 		<?php
 			if(isset($premium['_Unternehmens_status'][0]) && $premium['_Unternehmens_status'][0] == 'Partner'){ 
 			$partner = true;

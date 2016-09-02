@@ -140,7 +140,12 @@ wp_enqueue_script('fb');
                     
                         
                         
-                       <?php get_gallery($aktueller_post->post_name); ?>
+        <?php
+        $kundennummer=get_post_meta($aktueller_post->ID, $key="_Unternehmens_kundennummer", $single=true );
+
+        get_gallery($kundennummer);
+
+        ?>
                               
                          
                 
@@ -198,7 +203,12 @@ wp_enqueue_script('fb');
 	    //$sql = 'SELECT * FROM '.$table_name.' WHERE slug = %s';
 	    $resultset = $wpdb->get_results( $wpdb->prepare('SELECT permalink, description, imagename FROM '.$table_name.' WHERE slug = %s', $unternehmen) );
 		
+
+        //testausgabe
 		//echo $resultset[0]->permalink.'/'. $resultset[0]->imagename;
+        //echo $unternehmen;
+
+
 		
 		if (count($resultset)== 1){
 
