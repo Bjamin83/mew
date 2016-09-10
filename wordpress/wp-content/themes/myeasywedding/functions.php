@@ -16,7 +16,8 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 function custom_css() {
 /* Image in der Post-Type Unternehmensliste Backend */	
-   echo '<link href="'. get_bloginfo( "template_url" ) . '/css/myeasywedding.css" rel="stylesheet">';
+//   echo '<link href="'. get_bloginfo( "template_url" ) . '/css/myeasywedding.css" rel="stylesheet">';
+//   echo '<link href="'. get_bloginfo( "template_url" ) . '/css/mew.css" rel="stylesheet">';
 //   echo '<link href="'. get_bloginfo( "template_url" )     . '/bootstrap/css/bootstrap.css" rel="stylesheet">';
 	
 }

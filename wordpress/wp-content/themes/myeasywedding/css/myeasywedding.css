@@ -1,6 +1,20 @@
 /*** MEW CSS  ***/
-	
 
+/*
+*	==========================
+*	Testangaben
+*  	==========================
+*/
+
+.testA{
+    border: 1px solid black;
+    height: 320px;
+}
+
+
+
+
+===============================
 .block {
 	display:block;
 }
@@ -508,7 +522,7 @@
 
 .unternehmensliste-img {
 	display: block;
-	max-width: 80%;	
+	max-width: 100%;
 }
 
 

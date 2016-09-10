@@ -17,97 +17,72 @@
 	</div>
 </div>
 
+
+
+<!--   Anfang Schleife Unternehmenskacheln   -->
 <div class="my-row">
-    <div class="container">
-
-        <div class="col-xs-12 col-sm-3">1dede</div>
-        <div class="col-xs-12 col-sm-3">2dedede</div>
-        <div class="col-xs-12 col-sm-3">3deded</div>
-        <div class="col-xs-12 col-sm-3">4dedede</div>
-
-    </div>
-
-</div>
+    <div class="container unternehmensliste">
 
 
-
-<?php
+    <?php
 				
-// Holt sich alle Beiträge vom Typ Unternehmen aus der Kategorie der aktuellen Seite.
-$thecategory = intval(get_query_var('cat'));					
+            // Holt sich alle Beiträge vom Typ Unternehmen aus der Kategorie der aktuellen Seite.
+            $thecategory = intval(get_query_var('cat'));
 
-$args = array(
+            $args = array(
 
-	'category'     	   => $thecategory,
-	'orderby'          => 'date',
-	'order'            => 'DESC',
-	'post_type'        => 'unternehmen'
+                'category'     	   => $thecategory,
+                'orderby'          => 'date',
+                'order'            => 'DESC',
+                'post_type'        => 'unternehmen'
 
-);
-$posts_array = get_posts( $args );
-
-
-foreach($posts_array as $post) {
-
-//Helps to format custom query results for using Template tags
-setup_postdata($post);
-
-//Abfrage der eigenen Metaboxen. 
-$premium = get_post_meta(get_the_ID());
-
-// Testausgabe
-//echo $post->post_type;
-//echo print_r($post);	
-
-?>
+            );
+            $posts_array = get_posts( $args );
 
 
+            foreach($posts_array as $post) {
+
+            //Helps to format custom query results for using Template tags
+            setup_postdata($post);
+
+            //Abfrage der eigenen Metaboxen.
+            $premium = get_post_meta(get_the_ID());
+
+            // Testausgabe
+            //echo $post->post_type;
+            //echo print_r($post);
 
 
-		<?php
 			if(isset($premium['_Unternehmens_status'][0]) && $premium['_Unternehmens_status'][0] == 'Partner'){ 
 			$partner = true;
 			} else $partner = false;
-	
-			if($partner){
-				echo '<div class="my-row premium">';
-			
-			} else {
-				echo '<div class="my-row">';	
-			}
-		?>		
-			<div class="container unternehmensliste">	
-        		<div class="col-xs-12 col-sm-6">
-					<h2 class="margin-small"><?php the_title(); ?></h2>
-				
-          			<p class="lead"><?php the_excerpt(); ?> </p>
-			<?php
-				if($partner){
-					echo '<p class="partner-link"><a href="'. get_permalink(get_the_ID()) .'">Premiumansicht!</a></p>';
-				}
-			
-			?>
-        		</div>
-        		<div class="col-xs-12 col-sm-6">
 
-<?php 
+
+    ?>
+
+        		<div class="col-xs-12 col-sm-6 col-md-3 testA">
+
+    <?php
 				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
 						$url = wp_get_attachment_url( get_post_thumbnail_id() );
 				}else $url = "Pfad zum Platzhalter";
-?>
+    ?>
           		<img class="center-block unternehmensliste-img" src="<?php echo $url; ?>" alt="Generic placeholder image">
-        		</div>
-			
-			</div>
-			<hr class="container unternehmen-divider">
-			
-			<?php
-			if($partner){
-			echo '<div class="forward"><a href="' . get_permalink(get_the_ID()) . '"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>';
 
-			}
-?>
-			</div>
+					<h2 class="margin-small"><?php the_title(); ?></h2>
+				
+          			<p class="lead"><?php the_excerpt(); ?> </p>
+    <?php
+				if($partner){
+					echo '<p class="partner-link"><a href="'. get_permalink(get_the_ID()) .'">Premiumansicht!</a></p>';
+				}
+
+    ?>
+                </div>
+
+
+
+
 			
 
 <?php
@@ -116,6 +91,7 @@ wp_reset_query();
 
 ?>
 
-</div> 
+    </div>
+</div> <!-- Ende Schleife Unternehmenskacheln -->
 
 <?php get_footer(); ?>
