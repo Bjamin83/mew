@@ -1,23 +1,9 @@
 <?php get_header(); ?>
 
-<div class="my-row banner-flieder">
-		<div class="container">
-
-		
-		</div>
-		<img class="trenner-solo" src="<?php bloginfo( 'template_url' ); ?>/img/trenner-herz.png " alt="Pfeil"></img>
-        <div class="clear-both"></div>
-</div>
-	<div class="my-row">
-		<div class="text-center">
-			<h1 class="hl-rosa">Experten</h1>
-			<h3>Die dich unterstützen</h3>
-		</div>
-		<img class="banner-pfeile" src="<?php bloginfo( 'template_url' ); ?>/img/banner_pfeil.png " alt="Pfeil"></img>
-	</div>
 
 
-<div class="my-row banner-braun">
+
+<div class="my-row">
 
     <div class="container margin-big">	
 
@@ -34,9 +20,7 @@
 
     $categories = get_categories( $args );
     $i=0;
-    $textspalte='';
-    $bildspalte='';
-    $url='';
+
 
     // Testausgabe
     //echo print_r($categories);
@@ -46,15 +30,10 @@
 
 ?>	
               <div class="col-xs-6 col-sm-3 col-md-2">
-                <div class="text-center bv-kreis-liste banner-braun">
+                <div class="text-center kachel Xbanner-braun">
+                    <img class="" src="<?php echo site_url(); ?>/wp-content/uploads/Kategoriebilder/kat-<?php echo $categorie->cat_name ?>.jpg " alt="<?php echo $categorie->cat_name ?>" />
                     <a href="<?php echo esc_url(get_category_link( $categorie->cat_ID )); ?>" class="">
-                        <h4><?php 
-                            preg_match("/\[(.*?)\]/", $categorie->description, $match);
-                            if (isset($match[0])){
-                                echo preg_replace("/[\[\]]/", "" ,$match[0]);	
-                            }else echo $categorie->cat_name;
-
-                            ?></h4>
+                        <h4><?php echo $categorie->cat_name ?></h4>
                     </a> 
                 </div>
               </div>
@@ -84,7 +63,7 @@
 </p>
 		</div>
 </div>	
-<img class="banner-pfeile" src="<?php bloginfo( 'template_url' ); ?>/img/banner_pfeil.png " alt="Pfeil"></img>
+<img class="banner-pfeile" src="<?php bloginfo( 'template_url' ); ?>/img/banner_pfeil.png " alt="Pfeil" />
 </div>
 	
 <div class="my-row banner-green">
@@ -93,11 +72,11 @@
 		<h3 class="hl-white">News.Trends.Styes.Unser Newsletter</h3>
 	
 	</div>
-<img class="trenner-solo" src="<?php bloginfo( 'template_url' ); ?>/img/trenner-ringe.png " alt="Ringe"></img>	
+<img class="trenner-solo" src="<?php bloginfo( 'template_url' ); ?>/img/trenner-ringe.png " alt="Ringe" />
 </div>
 	<div class="my-row">
 		<div class="text-center margin-big">
-		<img class="banner-pfeile" src="<?php bloginfo( 'template_url' ); ?>/img/banner_love.png " alt="Pfeil"></img>
+		<img class="banner-pfeile" src="<?php bloginfo( 'template_url' ); ?>/img/banner_love.png " alt="Pfeil" />
 		<h2 class="hl-rosa">Genieße den schönsten Moment.</h2>
 		
 		</div>

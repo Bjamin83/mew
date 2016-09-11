@@ -609,61 +609,6 @@
 }
 
 
-/*
-*	===========================
-*	ADMINBEREICH
-*	===========================
-*/
-
-.img-u-liste {
-	width: 120px;
-	height: auto;
-}
-		   
-.admin-row {
-	width: 100%;
-}
-.admin-media-desc{
-	margin-bottom: 5px;
-}
-
-#anzeige-unternehmen {
-	margin-left: 10px;
-	margin-top: 15px;
-	width: 25%;
-	min-width: 209px;
-}
-#anzeige-unternehmen button{
-	padding: 10px;
-	width:100%;
-}	   
-#anzeige-unternehmen select{
-	height: 300px;
-	width:100%;
-
-}
-#anzeige-media{
-	width: 70%;
-	min-width: 200px;
-	margin: 12px 5px 0 5px;
-	
-}
-#anzeige-media img {
-	height: 95px;
-	margin: 0 10px;
-	
-}
-#anzeige-media label {
-	display: block;
-	
-}
-.admin-media-box {
-	min-width: 200px;
-	margin: 5px;
-	padding: 5px;
-	border: 1px solid #ddd;
-	background-color: #eee;
-}
 
 
 /*
