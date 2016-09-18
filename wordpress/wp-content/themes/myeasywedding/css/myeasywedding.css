@@ -6,10 +6,6 @@
 *  	==========================
 */
 
-.testA{
-    border: 1px solid black;
-    height: 320px;
-}
 
 
 
@@ -523,6 +519,7 @@
 .unternehmensliste-img {
 	display: block;
 	max-width: 100%;
+    max-height: 180px;
 }
 
 
@@ -1064,6 +1061,9 @@ body {
 	margin-left: 10px;
 }
 
+.unsichtbar{
+    display:none;
+}
 
 .my-row::before, .my-row::after {
 	content: " ";

@@ -41,6 +41,37 @@ $(document).ready(function() {
           }
 });
     
+    $( ".f-cat-icon" ).on( "click", function() {
+
+        var checkvar = $(this);
+
+        if(checkvar.hasClass("glyphicon-earphone")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").removeClass("unsichtbar");
+
+        }
+        if(checkvar.hasClass("glyphicon-envelope")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").removeClass("unsichtbar");
+
+        }
+        if(checkvar.hasClass("glyphicon-globe")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").removeClass("unsichtbar");
+
+        }
+
+    });
+
 });
 
 

@@ -58,7 +58,7 @@ function getDocRoot(){
     $docRoot = $_SERVER['DOCUMENT_ROOT'] . "/mew/wordpress/";
     
     } else {
-    $docRoot = $_SERVER['DOCUMENT_ROOT']; 
+    $docRoot = $_SERVER['DOCUMENT_ROOT']. "/";
     }
     return $docRoot;
 }
@@ -70,7 +70,7 @@ function getServerRoot(){
     if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
 	$base_url = "http://" . $_SERVER['SERVER_NAME']	. "/mew/wordpress/";
     } else {
-	$base_url = "http://" . $_SERVER['SERVER_NAME']; 
+	$base_url = "http://" . $_SERVER['SERVER_NAME']. "/";
     }
     return $base_url;
 }
