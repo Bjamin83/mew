@@ -1,6 +1,6 @@
 <!-- FOOTER -->
       <footer>
-<div class="my-row footer-bg">
+<div class="my-row color-footer">
 	<div class="container margin-bottom">
 		<div class="col-xs-6 col-sm-3">
 			<ol class="footer-liste">
