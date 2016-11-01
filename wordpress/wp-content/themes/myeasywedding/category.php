@@ -101,8 +101,10 @@
                                 }
 
                     ?>
+
+                    <!-- Über JS werden die TABs gesteuert. Achtung beim Anpassen von Knoten und Klassen!  -->
                                 <div class="kat-icons-wrap">
-                                    <div class="tel-kat kat-icons-div">
+                                    <div class="tel-kat kat-icons-div f-kat-active">
                                         <div class="glyphicon glyphicon-earphone kat-icon  f-cat-icon">
 
                                         </div>
@@ -121,7 +123,7 @@
 
                                 <div class="cat-ausgabe">
                                     <p class="cat-ausgabe-tel f-cat-tel">
-                                        123
+                                        Muss noch aus wp Ausgelesen werden.
                                     </p>
                                     <p class="cat-ausgabe-email f-cat-email unsichtbar">
                                         g@gmail.de

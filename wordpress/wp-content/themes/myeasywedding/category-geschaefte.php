@@ -3,7 +3,7 @@
 
 
 
-<div class="my-row">
+<div class="my-row bg-grau">
 
     <div class="container margin-big">	
 
@@ -29,13 +29,13 @@
     foreach ($categories as $categorie) {
 
 ?>	
-              <div class="col-xs-6 col-sm-3 col-md-2">
-                <div class="text-center kachel Xbanner-braun">
-                    <img class="" src="<?php echo site_url(); ?>/wp-content/uploads/Kategoriebilder/kat-<?php echo $categorie->cat_name ?>.jpg " alt="<?php echo $categorie->cat_name ?>" />
-                    <a href="<?php echo esc_url(get_category_link( $categorie->cat_ID )); ?>" class="">
+              <div class="col-xs-6 col-sm-3 col-md-2 padding-small">
+                <a href="<?php echo esc_url(get_category_link( $categorie->cat_ID )); ?>" class="branche-link">
+                    <div class="text-center kachel panel panel-default branche-overview">
+                        <img class="" src="<?php echo site_url(); ?>/wp-content/uploads/Kategoriebilder/kat-<?php echo $categorie->cat_name ?>.jpg " alt="<?php echo $categorie->cat_name ?>" />
                         <h4><?php echo $categorie->cat_name ?></h4>
-                    </a> 
-                </div>
+                    </div>
+                </a>
               </div>
 <?php
 

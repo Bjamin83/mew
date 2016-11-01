@@ -9,7 +9,6 @@
 
 
 
-
 ===============================
 .block {
 	display:block;
@@ -965,8 +964,8 @@ body {
 
 /* ================================= CHECKLISTE/GÄSTELISTE  =====  */
 
-.bg-rotbraun{
-    background-color: #804444;
+.bg-grau{
+    background-color: #eee;
 }
 .title-rotbraun{
     color: #652C2C;
@@ -1035,6 +1034,11 @@ body {
 .margin-top {
 	margin-top: 40px;
 }
+.padding-small{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .margin-top-normal {
 	margin-top: 20px;
 }
