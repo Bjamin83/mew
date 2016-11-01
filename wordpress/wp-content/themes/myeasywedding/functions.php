@@ -15,9 +15,10 @@ add_filter( 'show_admin_bar', '__return_false' );
 
 
 function custom_css() {
-/* Image in der Post-Type Unternehmensliste Backend */	
-   echo '<link href="'. get_bloginfo( "template_url" ) . '/css/myeasywedding.css" rel="stylesheet">';
-//   echo '<link href="'. get_bloginfo( "template_url" )     . '/bootstrap/css/bootstrap.css" rel="stylesheet">';
+/* CSS fürs Backend! */
+
+    echo '<link href="'. get_bloginfo( "template_url" ) . '/css/mew-backend.css" rel="stylesheet">';
+  //  echo '<link href="'. get_bloginfo( "template_url" )     . '/bootstrap/css/bootstrap.css" rel="stylesheet">';
 	
 }
 add_action('admin_head', 'custom_css');

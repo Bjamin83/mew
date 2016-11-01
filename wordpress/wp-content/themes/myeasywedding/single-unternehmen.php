@@ -140,7 +140,12 @@ wp_enqueue_script('fb');
                     
                         
                         
-                       <?php get_gallery($aktueller_post->post_name); ?>
+        <?php
+        $kundennummer=get_post_meta($aktueller_post->ID, $key="_Unternehmens_kundennummer", $single=true );
+
+        get_gallery($kundennummer);
+
+        ?>
                               
                          
                 
@@ -156,7 +161,19 @@ wp_enqueue_script('fb');
         
         <input type="hidden" id="rating-unternehmen" value="<?php echo get_the_ID(); ?>" />
         <h2>Deine Bewertung:</h2>
-        <?php get_user_bewertung();  ?>
+        <?php
+        /* Abfrage ob angemeldeter Benutzer  */
+        $user 		= get_current_user_id();
+
+        if($user == 0){
+            echo "Zum Bewerten musst du angemeldet sein.";
+
+        } else {
+            get_user_bewertung();
+
+        }
+        ?>
+
         	
     </div>
 
@@ -186,7 +203,12 @@ wp_enqueue_script('fb');
 	    //$sql = 'SELECT * FROM '.$table_name.' WHERE slug = %s';
 	    $resultset = $wpdb->get_results( $wpdb->prepare('SELECT permalink, description, imagename FROM '.$table_name.' WHERE slug = %s', $unternehmen) );
 		
+
+        //testausgabe
 		//echo $resultset[0]->permalink.'/'. $resultset[0]->imagename;
+        //echo $unternehmen;
+
+
 		
 		if (count($resultset)== 1){
 

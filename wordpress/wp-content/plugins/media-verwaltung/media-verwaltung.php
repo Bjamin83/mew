@@ -22,7 +22,7 @@ function create_media_table()
       permalink varchar(500) DEFAULT NULL,
       description varchar(255) DEFAULT NULL,
       imagename varchar(255) DEFAULT NULL,
-      property11 varchar(255) DEFAULT NULL,
+      region varchar(255) DEFAULT NULL,
       property12 varchar(255) DEFAULT NULL,
       property13 varchar(255) DEFAULT NULL,
 	  PRIMARY KEY (`slugname`),

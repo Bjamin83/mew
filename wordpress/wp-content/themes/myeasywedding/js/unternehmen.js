@@ -41,6 +41,46 @@ $(document).ready(function() {
           }
 });
     
+    $( ".f-cat-icon" ).on( "click", function() {
+        //Tab auf der Kachel. Bei Klick auf ein Icon wird der entsprechende Absatz eingeblendet und der Rest ausgeblendet.
+        var checkvar = $(this);
+
+        if(checkvar.hasClass("glyphicon-earphone")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").removeClass("unsichtbar");
+
+            checkvar.parent().parent().children().removeClass("f-kat-active");
+            checkvar.parent().addClass("f-kat-active");
+
+        }
+        if(checkvar.hasClass("glyphicon-envelope")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").removeClass("unsichtbar");
+
+            checkvar.parent().parent().children().removeClass("f-kat-active");
+            checkvar.parent().addClass("f-kat-active");
+
+        }
+        if(checkvar.hasClass("glyphicon-globe")){
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-tel").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-email").addClass("unsichtbar");
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").addClass("unsichtbar");
+
+            checkvar.closest(".kat-icons-wrap").next(".cat-ausgabe").children(".f-cat-web").removeClass("unsichtbar");
+
+            checkvar.parent().parent().children().removeClass("f-kat-active");
+            checkvar.parent().addClass("f-kat-active");
+
+        }
+
+    });
+
 });
 
 

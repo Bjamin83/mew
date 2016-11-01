@@ -58,7 +58,7 @@ function getDocRoot(){
     $docRoot = $_SERVER['DOCUMENT_ROOT'] . "/mew/wordpress/";
     
     } else {
-    $docRoot = $_SERVER['DOCUMENT_ROOT']; 
+    $docRoot = $_SERVER['DOCUMENT_ROOT']. "/";
     }
     return $docRoot;
 }
@@ -70,7 +70,7 @@ function getServerRoot(){
     if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
 	$base_url = "http://" . $_SERVER['SERVER_NAME']	. "/mew/wordpress/";
     } else {
-	$base_url = "http://" . $_SERVER['SERVER_NAME']; 
+	$base_url = "http://" . $_SERVER['SERVER_NAME']. "/";
     }
     return $base_url;
 }
@@ -78,39 +78,26 @@ function getServerRoot(){
 
 function anzeige_region(){
 	//AUSWAHL DER REGION
+    $mein_pfad =    getDocRoot();
+    $mein_pfad .=   "wp-load.php";
+
+    include_once($mein_pfad);
+
     global $region;
+    global $wpdb;
+
     
 	if ($region == ""){
 		return;
 	}
-     
-    $mein_pfad =    getDocRoot();
-    $mein_pfad .=   "wp-content/uploads/" . $region;
+
+    $table_name = $wpdb->prefix . 'mediaverwaltung';
     
-    $base_url =     getServerRoot();
-    $base_url .=    "wp-content/uploads/" . $region;
-          
-    // Ordner auslesen und Array in Variable speichern
-    $alledateien = scandir($mein_pfad); // Sortierung A-Z
-    // Sortierung Z-A mit scandir($ordner, 1)
-     
-    $ordner = array();
-     
-    foreach ($alledateien as $datei) {
-     
-     
-    $dateiinfo = pathinfo($mein_pfad . "/" . $datei);
-     
-    if(!isset($dateiinfo['extension'])){
-     
-    $ordner[ $dateiinfo['basename'] ] = $base_url ."/".$dateiinfo['basename'];
-     
-    }
-     
-     
-    }	
-    foreach($ordner as $key => $value){
-    echo "<option value='" . $value . "'>" . $key ."</option>";	
+    //Holt sich alle Unternehmen welche Bilder in der DB haben. Distinct auf slug bewirkt, dass bei mehreren Einträgen(Bildern) das Unternehmen nur einmal vorkommt.
+    $resultset = $wpdb->get_results( $wpdb->prepare('SELECT DISTINCT slug FROM '.$table_name.' WHERE region = %s ', $region) );
+
+    foreach($resultset as $result){
+    echo "<option value='" . $result->slug . "'>" . $result->slug ."</option>";
 	}
 
 }
@@ -118,7 +105,7 @@ function anzeige_region(){
 
 
 //	DB-Abfrage nach allen Bilder des gewählten Ordners und deren Darstellung.
- function anzeige_media(){
+function anzeige_media(){
 
 	$mein_pfad =    getDocRoot();
     $mein_pfad .=   "wp-load.php";
@@ -265,12 +252,12 @@ function check_all_media(){
 			//Name des Bilds: bild.jpg
 			$imagename = $value2;
 			 
-			$sql = "INSERT INTO {$wpdb->prefix}mediaverwaltung (slugname,slug,permalink,description,imagename) VALUES (%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE
+			$sql = "INSERT INTO {$wpdb->prefix}mediaverwaltung (slugname,slug,permalink,description,imagename,region) VALUES (%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE
 			slugname = %s";
 			 
 			// var_dump($sql); // debug
 			 
-			$sql = $wpdb->prepare($sql,$slugname,$slug,$permalink,$description,$imagename,$slugname);
+			$sql = $wpdb->prepare($sql,$slugname,$slug,$permalink,$description,$imagename,$region,$slugname);
 			// var_dump($sql); // debug
 			 
 			$wpdb->query($sql);	

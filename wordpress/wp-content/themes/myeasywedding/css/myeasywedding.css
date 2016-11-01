@@ -1,6 +1,15 @@
-/** MEW CSS  **/
-	
+/*** MEW CSS  ***/
 
+/*
+*	==========================
+*	Testangaben
+*  	==========================
+*/
+
+
+
+
+===============================
 .block {
 	display:block;
 }
@@ -23,7 +32,7 @@
 *  	==========================
 */
 
-#userLogin{
+#userLogin, #userLogout{
     position: absolute;
     z-index: 1100;
     right: 10px;
@@ -508,7 +517,8 @@
 
 .unternehmensliste-img {
 	display: block;
-	max-width: 80%;	
+	max-width: 100%;
+    max-height: 180px;
 }
 
 
@@ -595,61 +605,6 @@
 }
 
 
-/*
-*	===========================
-*	ADMINBEREICH
-*	===========================
-*/
-
-.img-u-liste {
-	width: 120px;
-	height: auto;
-}
-		   
-.admin-row {
-	width: 100%;
-}
-.admin-media-desc{
-	margin-bottom: 5px;
-}
-
-#anzeige-unternehmen {
-	margin-left: 10px;
-	margin-top: 15px;
-	width: 25%;
-	min-width: 209px;
-}
-#anzeige-unternehmen button{
-	padding: 10px;
-	width:100%;
-}	   
-#anzeige-unternehmen select{
-	height: 300px;
-	width:100%;
-
-}
-#anzeige-media{
-	width: 70%;
-	min-width: 200px;
-	margin: 12px 5px 0 5px;
-	
-}
-#anzeige-media img {
-	height: 95px;
-	margin: 0 10px;
-	
-}
-#anzeige-media label {
-	display: block;
-	
-}
-.admin-media-box {
-	min-width: 200px;
-	margin: 5px;
-	padding: 5px;
-	border: 1px solid #ddd;
-	background-color: #eee;
-}
 
 
 /*
@@ -1009,8 +964,8 @@ body {
 
 /* ================================= CHECKLISTE/GÄSTELISTE  =====  */
 
-.bg-rotbraun{
-    background-color: #804444;
+.bg-grau{
+    background-color: #eee;
 }
 .title-rotbraun{
     color: #652C2C;
@@ -1079,6 +1034,11 @@ body {
 .margin-top {
 	margin-top: 40px;
 }
+.padding-small{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
 .margin-top-normal {
 	margin-top: 20px;
 }
@@ -1105,6 +1065,9 @@ body {
 	margin-left: 10px;
 }
 
+.unsichtbar{
+    display:none;
+}
 
 .my-row::before, .my-row::after {
 	content: " ";
